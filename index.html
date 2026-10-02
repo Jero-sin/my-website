@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerosin | Personal Portfolio</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1120;
+    color: #f8fafc;
+    line-height: 1.7;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(11,17,32,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #26334d;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #60a5fa;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+section {
+    padding: 85px 10%;
+    scroll-margin-top: 65px;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top, #172b49 0%, #0b1120 65%);
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #172b49;
+    border: 2px solid #3b82f6;
+    color: #93c5fd;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    box-shadow: 0 0 35px #2563eb33;
+}
+
+.tag {
+    color: #60a5fa;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 75px);
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.highlight {
+    color: #60a5fa;
+}
+
+.hero h2 {
+    font-size: 23px;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.hero p {
+    max-width: 570px;
+    color: #94a3b8;
+    margin: 18px 0 28px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #64748b;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.15);
+}
+
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    text-align: center;
+    color: #94a3b8;
+    margin: 0 auto 38px;
+    max-width: 600px;
+}
+
+.about {
+    background: #111c30;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    max-width: 600px;
+    margin: 35px auto 0;
+}
+
+.info-card, .skill-card, .interest-card {
+    background: #172238;
+    border: 1px solid #26334d;
+    border-radius: 14px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.info-card:hover, .skill-card:hover,
+.interest-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+}
+
+.info-card span, .skill-icon {
+    font-size: 30px;
+}
+
+.info-card h3, .skill-card h3,
+.interest-card h3 {
+    margin-top: 8px;
+}
+
+.info-card p, .skill-card p,
+.interest-card p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.skills-grid, .interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.skill-card, .interest-card {
+    text-align: center;
+}
+
+.interests {
+    background: #111c30;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #94a3b8;
+    margin: 15px auto 25px;
+    max-width: 550px;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #070c17;
+    color: #94a3b8;
+    border-top: 1px solid #26334d;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 15px 5%;
+    }
+    nav a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    section {
+        padding: 65px 6%;
+    }
+    .info-grid, .skills-grid,
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h2 {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">JEROSIN.</div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="avatar">J</div>
+    <div class="tag">HELLO, I'M</div>
+    <h1>I'm <span class="highlight">Jerosin</span></h1>
+    <h2>B.Tech Information Technology Student</h2>
+    <p>
+        Exploring technology, building skills and
+        turning ideas into reality. Welcome to my
+        personal corner of the internet.
+    </p>
+    <div class="buttons">
+        <a href="#about" class="btn primary">Explore More ↓</a>
+        <a href="#contact" class="btn secondary">Get in Touch</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">About <span class="highlight">Me</span></h2>
+    <p class="section-desc">
+        A curious mind, a growing developer.
+    </p>
+
+    <div class="about-content">
+        <p>
+            Hi! I'm Jerosin, a B.Tech Information Technology
+            student at Kongu Engineering College.
+        </p>
+        <p>
+            I'm interested in technology, programming
+            and discovering how digital solutions can
+            solve real-world problems.
+        </p>
+        <p>
+            I'm currently developing my programming
+            knowledge, exploring web development and
+            working towards becoming a better problem
+            solver. I believe in learning step by step
+            and improving through practice.
+        </p>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <span>🎓</span>
+            <h3>Education</h3>
+            <p>B.Tech Information Technology</p>
+            <p>Kongu Engineering College</p>
+        </div>
+        <div class="info-card">
+            <span>💻</span>
+            <h3>Focus</h3>
+            <p>Technology & Programming</p>
+            <p>Continuous Learning</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">What I'm <span class="highlight">Exploring</span></h2>
+    <p class="section-desc">
+        Technologies and skills I'm learning
+        as I grow in the IT field.
+    </p>
+
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon">🐍</div>
+            <h3>Python</h3>
+            <p>Learning programming fundamentals
+            and writing simple programs.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>Exploring HTML, CSS and
+            JavaScript to build websites.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Discovering AI concepts
+            and emerging technologies.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">🧠</div>
+            <h3>Problem Solving</h3>
+            <p>Developing logical thinking
+            and analytical skills.</p>
+        </div>
+    </div>
+</section>
+
+<section class="interests" id="interests">
+    <h2 class="section-title">Beyond <span class="highlight">Technology</span></h2>
+    <p class="section-desc">
+        Things that keep me curious and motivated.
+    </p>
+    <div class="interest-grid">
+        <div class="interest-card">
+            <div class="skill-icon">♟️</div>
+            <h3>Chess</h3>
+            <p>Strategy, patience and logical thinking.</p>
+        </div>
+        <div class="interest-card">
+            <div class="skill-icon">🚀</div>
+            <h3>Innovation</h3>
+            <p>Exploring ideas and new possibilities.</p>
+        </div>
+        <div class="interest-card">
+            <div class="skill-icon">🌍</div>
+            <h3>Technology</h3>
+            <p>Keeping up with the digital world.</p>
+        </div>
+        <div class="interest-card">
+            <div class="skill-icon">📚</div>
+            <h3>Learning</h3>
+            <p>Improving knowledge and communication.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+    <p>
+        Always interested in learning, sharing ideas
+        and exploring new opportunities.
+    </p>
+    <a href="#home" class="btn primary">Back to Top ↑</a>
+</section>
+
+<footer>
+    <p>Designed & Built by Jerosin | 2026</p>
+    <p>Learning today. Building tomorrow.</p>
+</footer>
+
+</body>
+</html>
